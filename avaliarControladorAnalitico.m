@@ -10,4 +10,4 @@ delay = exp(-tau*s);
 %delay = tf(num, den);
 Ga = C * delay * (-planta.a);
 Gf = minreal(feedback(Ga,1));
-margin(Gf);
+margin(Ga);
