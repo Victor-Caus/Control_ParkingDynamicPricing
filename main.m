@@ -1,3 +1,5 @@
+clear
 planta = obterPlantaProjeto();
-requisitos = obterRequisitos();
-controlador_analitico = projetarControladorAnalitico(requisitos, planta);
+controlador = discretizarControladorPreco();
+
+avaliarControladorAnalDiscretizado(controlador, planta);
