@@ -19,5 +19,4 @@ p = polyfit(x, y, 1);
 planta.a = p(1);
 planta.b = p(2);
 
-
 end

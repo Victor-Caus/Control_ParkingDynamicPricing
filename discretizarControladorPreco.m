@@ -7,13 +7,13 @@ function controlador = discretizarControladorPreco()
 % A saida ftd eh a funcao de transferencia discreta (no dominio z) do
 % controlador de corrente.
 
-Kp = 1;%controlador.Kp;
-Ki = 2.33e-6;%controlador.Ki;
+Kp = 0.01;%controlador.Kp;
+Ki = 2.33e-1;%controlador.Ki;
 T = 86400;
 % Implementar
 s = tf('s');
 
-C = Kp + Ki*s;
+C = Kp + Ki/s;
 controlador.ftd = c2d(C, T, 'Tustin');
 controlador.T = T;
 end

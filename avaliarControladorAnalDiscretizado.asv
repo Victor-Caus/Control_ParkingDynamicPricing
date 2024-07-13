@@ -19,11 +19,11 @@ function avaliarControladorAnalDiscretizado(controlador, planta)
 tf = 2*pi*10^7;
 
 Nr.time = [0; tf/2; 1+tf/2; tf];
-Nr.signals.values = [0.8; 0.8; 0.35; 0.35];
+Nr.signals.values = [0.45; 0.45; 0.85; 0.85];
 Nr.signals.dimensions = 1;
 
 b.time = [0; tf];
-b.signals.values = [0.54; 0.54];
+b.signals.values = [2; 2];
 b.signals.dimensions = 1;
 
 % Configurando as variaveis usadas no Simulink
@@ -62,14 +62,6 @@ ylabel('preco', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
 print -dpng -r400 degrau_wl.png % para usuarios de Word
-
-figure;
-plot(out.preco1.time, out.preco1.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('preco1', 'FontSize', 14);
-set(gca, 'FontSize', 14);
-grid on;
-print -dpng -r400 degrau_pl.png % para usuarios de Word
 % print -depsc2 degrau_wl.eps % para usuarios de LaTeX
 
 

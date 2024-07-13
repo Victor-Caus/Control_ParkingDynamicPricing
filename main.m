@@ -1,5 +1,5 @@
 clear
 planta = obterPlantaProjeto();
-controlador = discretizarControladorPreco();
+controlador = projetarControladorAnalitico();
 
 avaliarControladorAnalDiscretizado(controlador, planta);
