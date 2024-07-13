@@ -15,5 +15,5 @@ s = tf('s');
 
 C = Kp + Ki*s;
 controlador.ftd = c2d(C, T, 'Tustin');
-
+controlador.T = T;
 end

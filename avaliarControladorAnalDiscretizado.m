@@ -22,11 +22,18 @@ Nr.time = [0; tf];
 Nr.signals.values = [0.8; 0.8];
 Nr.signals.dimensions = 1;
 
+b.time = [0; tf];
+b.signals.values = [planta.b,planta.b];
+b.signals.dimensions = 1;
+
 % Configurando as variaveis usadas no Simulink
 assignin('base', 'tf', tf);
 assignin('base', 'Nr', Nr);
+assignin('base', 'b', b);
 assignin('base', 'controlador', controlador);
 assignin('base', 'planta', planta);
+
+
 
 out = sim('plantaestacionamento.slx');
 
@@ -56,24 +63,6 @@ set(gca, 'FontSize', 14);
 grid on;
 print -dpng -r400 degrau_wl.png % para usuarios de Word
 % print -depsc2 degrau_wl.eps % para usuarios de LaTeX
-
-figure;
-plot(out.ic.time, out.ic.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('i_c (A)', 'FontSize', 14);
-set(gca, 'FontSize', 14);
-grid on;
-print -dpng -r400 degrau_ic.png % para usuarios de Word
-% print -depsc2 degrau_ic.eps % para usuarios de LaTeX
-
-figure;
-plot(out.i.time, out.i.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('i (A)', 'FontSize', 14);
-set(gca, 'FontSize', 14);
-grid on;
-print -dpng -r400 degrau_i.png % para usuarios de Word
-% print -depsc2 degrau_i.eps % para usuarios de LaTeX
 
 
 end
