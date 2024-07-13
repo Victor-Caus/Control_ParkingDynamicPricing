@@ -17,7 +17,5 @@ Ga = C * delay * (-planta.a);
 Gf = minreal(feedback(Ga,1));
 [Gm, Pm, Wcg, Wcp] = margin(Ga);
 wb = bandwidth(Gf);
-custoPm = min((Pm-requisitos.PM)/requisitos.PM, 0)^2;
-custoGm = min((Gm-requisitos.GM)/requisitos.GM, 0)^2;
-custowb = ((wb-requisitos.wb)/requisitos.wb)^2;
-custo = custoPm + custowb + custoGm;
+custoPm 
+custo = ((Pm-requisitos.PM)/requisitos.PM)^2 + ((wb-requisitos.wb)/requisitos.wb)^2;

@@ -3,8 +3,8 @@ planta = obterPlantaProjeto();
 s = tf('s');
 % PI
 
-Kp = 0.7598;
-Ki = 1.46613e-5;
+Kp = 1.9123;
+Ki = 1.2187e-05;
 tau = 86400/2;
 C = Ki/s + Kp;
 % Lag
