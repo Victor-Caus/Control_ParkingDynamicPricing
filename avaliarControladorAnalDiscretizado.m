@@ -18,12 +18,12 @@ function avaliarControladorAnalDiscretizado(controlador, planta)
 
 tf = 2*pi*10^7;
 
-Nr.time = [0; tf/2; 1+tf/2; tf];
-Nr.signals.values = [0.8; 0.8; 0.35; 0.35];
+Nr.time = [0; tf];
+Nr.signals.values = [0.6; 0.6];%; 0.35; 0.35
 Nr.signals.dimensions = 1;
 
 b.time = [0; tf];
-b.signals.values = [0.54; 0.54];
+b.signals.values = [planta.b; planta.b];
 b.signals.dimensions = 1;
 
 % Configurando as variaveis usadas no Simulink

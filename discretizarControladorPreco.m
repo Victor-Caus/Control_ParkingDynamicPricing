@@ -1,4 +1,4 @@
-function controlador = discretizarControladorPreco()
+function controlador = discretizarControladorPreco(controlador)
 % ftd = discretizarControladorPosicao(controlador) discretiza o controlador
 % de corrente. A struct controlador eh dada por:
 % controlador.Kp: ganho proporcional do controlador de corrente.
@@ -7,13 +7,12 @@ function controlador = discretizarControladorPreco()
 % A saida ftd eh a funcao de transferencia discreta (no dominio z) do
 % controlador de corrente.
 
-Kp = 0.01;%controlador.Kp;
-Ki = 2.33e-1;%controlador.Ki;
+
 T = 86400;
 % Implementar
 s = tf('s');
 
-C = Kp + Ki/s;
+C = controlador.Kp + controlador.Ki/s;
 controlador.ftd = c2d(C, T, 'Tustin');
 controlador.T = T;
 end
