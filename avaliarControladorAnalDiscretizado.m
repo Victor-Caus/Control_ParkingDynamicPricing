@@ -16,10 +16,10 @@ function avaliarControladorAnalDiscretizado(controlador, planta)
 % A struct planta contem os parametros da planta e pode ser obtida atraves
 % de planta = obterPlantaServoPosicao().
 
-tf = 2*pi*10^7;
+tf = 3600*24*365; % 1 ano 
 
 Nr.time = [0; tf];
-Nr.signals.values = [0.6; 0.6];%; 0.35; 0.35
+Nr.signals.values = [0.6; 0.6];
 Nr.signals.dimensions = 1;
 
 b.time = [0; tf];
@@ -33,8 +33,6 @@ assignin('base', 'b', b);
 assignin('base', 'controlador', controlador);
 assignin('base', 'planta', planta);
 
-
-
 out = sim('plantaestacionamento.slx');
 
 figure;
@@ -43,17 +41,15 @@ xlabel('Tempo (s)', 'FontSize', 14);
 ylabel('N', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
-print -dpng -r400 degrau_thetal.png % para usuarios de Word
-% print -depsc2 degrau_thetal.eps % para usuarios de LaTeX
+print -depsc2 out_N.eps % para usuarios de LaTeX
 
 figure;
-plot(out.N1.time, out.N1.signals.values, 'LineWidth', 2);
+plot(out.N_linear.time, out.N_linear.signals.values, 'LineWidth', 2);
 xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('N1', 'FontSize', 14);
+ylabel('N linear', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
-print -dpng -r400 degrau_thetam.png % para usuarios de Word
-% print -depsc2 degrau_thetam.eps % para usuarios de LaTeX
+print -depsc2 out_N_linear.eps % para usuarios de LaTeX
 
 figure;
 plot(out.preco.time, out.preco.signals.values, 'LineWidth', 2);
@@ -61,16 +57,6 @@ xlabel('Tempo (s)', 'FontSize', 14);
 ylabel('preco', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
-print -dpng -r400 degrau_wl.png % para usuarios de Word
-
-figure;
-plot(out.preco1.time, out.preco1.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('preco1', 'FontSize', 14);
-set(gca, 'FontSize', 14);
-grid on;
-print -dpng -r400 degrau_pl.png % para usuarios de Word
-% print -depsc2 degrau_wl.eps % para usuarios de LaTeX
-
+print -dpng -r400 out_preco.png % para usuarios de Word
 
 end
