@@ -1,7 +1,18 @@
+%% Projeto do controlador
+
 clear
 planta = obterPlanta();
 requisitos = obterRequisitos();
 controlador = projetarControladorAnalitico(requisitos, planta);
 controlador = projetarControladorNelderMead(controlador);
 
-avaliarControladorAnalDiscretizado(controlador, planta);
+
+%% Avaliar o controlodar de forma analítica (planta aproximada)
+
+avaliarControladorAnalitico(controlador, planta);
+
+
+%% Simulação
+
+Tf = requisitos.T*30; % duração da simulação
+avaliarControladorSimulacao(controlador, planta, Tf);

@@ -1,4 +1,4 @@
-function avaliarControladorAnalDiscretizado(controlador, planta)
+function avaliarControladorSimulacao(controlador, planta, Tf)
 % simularRespostaDegrau(controlador, planta) simula a resposta ao degrau
 % unitario do servomotor de posicao. A struct controlador eh dada por:
 % controlador.posicao.Kp: ganho proporcional do controlador de posicao.
@@ -16,18 +16,16 @@ function avaliarControladorAnalDiscretizado(controlador, planta)
 % A struct planta contem os parametros da planta e pode ser obtida atraves
 % de planta = obterPlantaServoPosicao().
 
-tf = 3600*24*365; % 1 ano 
-
-Nr.time = [0; tf];
+Nr.time = [0; Tf];
 Nr.signals.values = [0.6; 0.6];
 Nr.signals.dimensions = 1;
 
-b.time = [0; tf];
+b.time = [0; Tf];
 b.signals.values = [planta.b; planta.b];
 b.signals.dimensions = 1;
 
 % Configurando as variaveis usadas no Simulink
-assignin('base', 'tf', tf);
+assignin('base', 'Tf', Tf);
 assignin('base', 'Nr', Nr);
 assignin('base', 'b', b);
 assignin('base', 'controlador', controlador);
@@ -57,6 +55,6 @@ xlabel('Tempo (s)', 'FontSize', 14);
 ylabel('preco', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
-print -dpng -r400 out_preco.png % para usuarios de Word
+print -depsc2 out_preco.eps % para usuarios de LaTeX
 
 end

@@ -3,12 +3,11 @@ s = tf('s');
 
 planta = obterPlanta();
 requisitos = obterRequisitos();
-controlador = projetarControladorAnalitico(requisitos, planta);
 
 % PI
 Kp = x(1);
 Ki = x(2);
-tau = controlador.T./2;
+tau = requisitos.T./2;
 C = Ki/s + Kp;
 
 delay = exp(-tau*s);

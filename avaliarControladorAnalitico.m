@@ -1,13 +1,12 @@
-clear
-planta = obterPlanta();
+function avaliarControladorAnalitico(controlador, planta)
+% avaliarControladorAnalitico(controlador, planta, tf)
+
 s = tf('s');
 
 % PI
-Kp = 0.080712377087133;
-Ki = 7.750471506277099e-06;
-tau = 86400/2;
-C = Ki/s + Kp;
+C = controlador.Ki/s + controlador.Kp;
 
+tau = 86400/2;
 delay = exp(-tau*s); % zero-hold representado como atraso de T/2
 
 Ga = C * delay * (-planta.a);
@@ -17,3 +16,4 @@ margin(Ga);
 figure;
 step(Gf);
 bandwidth(Gf)
+end

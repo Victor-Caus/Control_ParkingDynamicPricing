@@ -30,6 +30,5 @@ x = fzero(fun, x0);
 
 controlador.Kp = x;
 controlador.Ki = Ki2(x);
-controlador.T = 86400;
 
 end
