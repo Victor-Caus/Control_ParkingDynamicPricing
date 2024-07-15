@@ -3,8 +3,8 @@
 clear
 planta = obterPlanta();
 requisitos = obterRequisitos();
-controlador = projetarControladorAnalitico(requisitos, planta);
-controlador = projetarControladorNelderMead(controlador);
+controlador_analitico = projetarControladorAnalitico(requisitos, planta);
+controlador = projetarControladorNelderMead(controlador_analitico);
 
 
 %% Avaliar o controlodar de forma analítica (sistema aproximado)
