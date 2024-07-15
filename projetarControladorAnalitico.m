@@ -1,6 +1,6 @@
 function controlador = projetarControladorAnalitico(requisitos, planta)
 % controlador = projetarControladorCorrenteAnalitico(requisitos, planta)
-% projeta o controlador de corrente atraves de um metodo analitico. A
+% projeta o controlador atraves de um metodo analitico. A
 % struct requisitos eh:
 % requisitos.wb: requisito de banda passante.
 % requisitos.GM: requisito de margem de ganho.

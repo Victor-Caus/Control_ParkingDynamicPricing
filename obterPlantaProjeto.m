@@ -1,8 +1,7 @@
 function planta = obterPlantaProjeto()
 % planta = obterPlantaProjeto()
-% Obtem os parametros da planta da reta que
-% Maxon EC-45 30 W 200  142: 
-% http://edge.rit.edu/edge/P13021/public/DDR/Maxon%20Generator%2030W.pdf
+% Obtem os parametros da planta da reta que modela a ocupação em função do
+% preço (ax + b)
 
 % Dados conhecidos (Com dados de um determinado lugar)
 % Dados de 600 block of Beach Street, Fisherman's Wharf:
