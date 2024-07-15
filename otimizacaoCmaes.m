@@ -1,6 +1,7 @@
 clear
 planta = obterPlanta();
-controlador = projetarControladorAnalitico();
+requisitos = obterRequisitos();
+controlador = projetarControladorAnalitico(requisitos, planta);
 
 xstart(1) = controlador.Kp;
 xstart(2) = controlador.Ki;
