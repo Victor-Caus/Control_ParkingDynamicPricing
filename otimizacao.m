@@ -1,5 +1,5 @@
 clear
-planta = obterPlantaProjeto();
+planta = obterPlanta();
 controlador = projetarControladorAnalitico();
 
 xstart(1) = controlador.Kp;

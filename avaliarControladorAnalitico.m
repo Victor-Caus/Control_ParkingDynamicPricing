@@ -1,21 +1,14 @@
 clear
-planta = obterPlantaProjeto();
+planta = obterPlanta();
 s = tf('s');
-% PI
 
-Kp = 1.9123;
-Ki = 1.2187e-05;
+% PI
+Kp = 0.080712377087133;
+Ki = 7.750471506277099e-06;
 tau = 86400/2;
 C = Ki/s + Kp;
-% Lag
-%alpha = 30;
-%T = 86400*100;
-%K = 1.5;
-%C = K*alpha*(T*s+1)/(alpha*T*s+1);
 
-delay = exp(-tau*s);
-%[num, den] = pade(tau, 1);
-%delay = tf(num, den);
+delay = exp(-tau*s); % zero-hold representado como atraso de T/2
 
 Ga = C * delay * (-planta.a);
 Gf = minreal(feedback(Ga,1));

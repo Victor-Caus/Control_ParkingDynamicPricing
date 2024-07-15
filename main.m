@@ -1,5 +1,7 @@
 clear
-planta = obterPlantaProjeto();
-controlador = projetarControladorAnalitico();
+planta = obterPlanta();
+requisitos = obterRequisitos();
+controlador = projetarControladorAnalitico(requisitos, planta);
+controlador = projetarControladorNelderMead(controlador);
 
 avaliarControladorAnalDiscretizado(controlador, planta);

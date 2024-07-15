@@ -1,9 +1,9 @@
 function custo = calcularCusto(x)
 s = tf('s');
 
-planta = obterPlantaProjeto();
-controlador = projetarControladorAnalitico();
+planta = obterPlanta();
 requisitos = obterRequisitos();
+controlador = projetarControladorAnalitico(requisitos, planta);
 
 % PI
 Kp = x(1);

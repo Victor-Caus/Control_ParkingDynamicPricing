@@ -1,5 +1,5 @@
-function planta = obterPlantaProjeto()
-% planta = obterPlantaProjeto()
+function planta = obterPlanta()
+% planta = obterPlanta()
 % Obtem os parametros da planta da reta que modela a ocupação em função do
 % preço (ax + b)
 
