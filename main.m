@@ -14,5 +14,5 @@ avaliarControladorAnalitico(controlador, planta);
 
 %% Simulação
 
-Tf = requisitos.T*30; % duração da simulação
+Tf = requisitos.T*120; % duração da simulação
 avaliarControladorSimulacao(controlador, planta, Tf);

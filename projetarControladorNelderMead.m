@@ -7,5 +7,6 @@ xOtimo = fminsearch(J, x0);
 
 controlador.Kp = xOtimo(1);
 controlador.Ki = xOtimo(2);
+%controlador.T = controlador.T;
 
 end
