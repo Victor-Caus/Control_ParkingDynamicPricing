@@ -1,5 +1,11 @@
 function avaliarControladorAnalitico(controlador, planta)
 % avaliarControladorAnalitico(controlador, planta)
+% Dado o controlador e a planta, plota gráficos que avaliam os requisitos,
+% isto é: margem de ganho, margem de fase, banda passante.
+% controlador.Ki: ganho integral
+% controlador.Kp: ganho proporcional
+% planta.a e planta.b: constantes da reta (ax + b) que descrevem a demanda
+% em função do preço.
 
 s = tf('s');
 

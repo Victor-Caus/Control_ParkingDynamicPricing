@@ -1,4 +1,8 @@
 function custo = calcularCusto(x)
+% Função de custo que é utilizado nos algoritmos de otimização Nelder Mead
+% e CMAES. Dado determinado Kp e no Ki, calcula as diferenças quadráticas
+% normalizadas de cada requisito, tentando chegar a tais requisitos.
+
 s = tf('s');
 
 planta = obterPlanta();

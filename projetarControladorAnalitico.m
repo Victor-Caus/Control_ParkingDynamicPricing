@@ -6,13 +6,13 @@ function controlador = projetarControladorAnalitico(requisitos, planta)
 % requisitos.wb: requisito de banda passante.
 % requisitos.GM: requisito de margem de ganho.
 % requisitos.PM: requisito de margem de fase.
-% requisitos.fs: requisito de taxa de amostragem.
+% requisitos.T: requisito de período de amostragem.
 % A struct planta contem os parametros da planta e pode ser obtida atraves
-% de planta = obterPlantaServoPosicao().
+% de planta = obterPlanta().
 % A saida da funcao eh a struct controlador:
-% controlador.K: ganho proporcional do controlador de corrente.
-% controlador.Tl: parametro Tl da compensacao lead.
-% controlador.T: periodo de amostragem do controlador de corrente.
+% controlador.Kp: ganho proporcional.
+% controlador.Ki: ganho integral.
+% controlador.T: periodo de amostragem.
 
 PM = requisitos.PM;
 a = planta.a;

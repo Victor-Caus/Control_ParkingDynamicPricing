@@ -1,20 +1,14 @@
 function avaliarControladorSimulacao(controlador, planta, Tf)
-% simularRespostaDegrau(controlador, planta) simula a resposta ao degrau
-% unitario do servomotor de posicao. A struct controlador eh dada por:
-% controlador.posicao.Kp: ganho proporcional do controlador de posicao.
-% controlador.posicao.Kd: ganho derivativo do controlador de posicao.
-% controlador.posicao.a: frequencia de corte do filtro do termo derivativo.
-% controlador.posicao.T: periodo de amostragem do controlador de posicao.
-% controlador.posicao.ftd: funcao de transferencia discreta do controlador
-%                          de posicao.
-% controlador.corrente.K: ganho proporcional do controlador de corrente.
-% controlador.corrente.alpha: parametro alpha da compensacao lead.
-% controlador.corrente.Tl: parametro Tl da compensacao lead.
-% controlador.corrente.T: tempo de amostragem do controlador de corrente.
-% controlador.corrente.ftd: funcao de transferencia discreta do controlador
-%                          de corrente.
+% simularRespostaDegrau(controlador, planta) simula degrau unitário (caso
+% real do precificador). A struct controlador eh dada por:
+% Tf = Tempo final da simulação
+% controlador.Ki: ganho integral
+% controlador.Kp: ganho proporcional
+% controlador.T: tempo de amostragem
+% planta.a e planta.b: constantes da reta (ax + b) que descrevem a demanda
+% em função do preço.
 % A struct planta contem os parametros da planta e pode ser obtida atraves
-% de planta = obterPlantaServoPosicao().
+% de planta = obterPlanta().
 
 Nr.time = [0; Tf];
 Nr.signals.values = [0.6; 0.6];
