@@ -21,5 +21,6 @@ set(gca, 'FontSize', 14);
 grid on;
 print -depsc2 metodoGrafico.eps
 
+% intersecção encontrada para PM = 120, a = 0.2320 e Tb = 86400*30:
 Kp = 2.60777;
 Ki = 1.33561e-5;

@@ -11,7 +11,7 @@ function avaliarControladorSimulacao(controlador, planta, Tf)
 % de planta = obterPlanta().
 
 Nr.time = [0; Tf];
-Nr.signals.values = [0.6; 0.6];
+Nr.signals.values = [0.7; 0.7];
 Nr.signals.dimensions = 1;
 
 b.time = [0; Tf];

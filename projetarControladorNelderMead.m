@@ -8,8 +8,8 @@ function controlador = projetarControladorNelderMead(controlador)
 J = @(x) calcularCusto(x);
 
 x0 = [controlador.Kp, controlador.Ki];
-
-xOtimo = fminsearch(J, x0);
+options = optimset('PlotFcns',@optimplotfval);
+xOtimo = fminsearch(J, x0, options);
 
 controlador.Kp = xOtimo(1);
 controlador.Ki = xOtimo(2);
