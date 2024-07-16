@@ -17,6 +17,6 @@ p = polyfit(x, y, 1);
 % Coeficientes
 planta.a = p(1);
 planta.b = p(2);
-planta.variancia = 0.0025;
+planta.variancia = 0.05^2;
 
 end

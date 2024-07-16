@@ -29,7 +29,7 @@ out = sim('plantaestacionamento.slx');
 
 figure;
 plot(out.N.time, out.N.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
+xlabel('Time (s)', 'FontSize', 14);
 ylabel('N', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
@@ -37,7 +37,7 @@ print -depsc2 out_N.eps % para usuarios de LaTeX
 
 figure;
 plot(out.N_linear.time, out.N_linear.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
+xlabel('Time (s)', 'FontSize', 14);
 ylabel('N linear', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
@@ -45,8 +45,8 @@ print -depsc2 out_N_linear.eps % para usuarios de LaTeX
 
 figure;
 plot(out.preco.time, out.preco.signals.values, 'LineWidth', 2);
-xlabel('Tempo (s)', 'FontSize', 14);
-ylabel('preco', 'FontSize', 14);
+xlabel('Time (s)', 'FontSize', 14);
+ylabel('Hourly rate ($)', 'FontSize', 14);
 set(gca, 'FontSize', 14);
 grid on;
 print -depsc2 out_preco.eps % para usuarios de LaTeX
