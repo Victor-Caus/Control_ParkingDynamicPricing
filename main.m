@@ -12,7 +12,7 @@ controlador = projetarControladorNelderMead(controlador_analitico);
 % Essa avaliação é sobre o controlador otimizado, porém com planta sem 
 % ruído e o zero-hold é aproximado por um atraso de T/2
 planta = obterPlanta();
-avaliarControladorAnalitico(controlador, planta);
+avaliarControladorAnalitico(controlador_analitico, planta);
 
 
 %% Simulação
